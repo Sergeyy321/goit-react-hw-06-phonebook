@@ -55,13 +55,13 @@ const onAddContact = ({ name, number }) => {
 };
 
  
-  const lowercaseName = filter.toLowerCase();
-  const contactsEl =
-    filter !== ''
-      ? contacts.filter(contacts =>
-        contacts.name.toLowerCase().includes(lowercaseName)
-      )
-      : [];
+ const getFilteredContacts =()=> {
+    const normalizedValue = filter.toLowerCase().trim();
+    return contacts.filter(contact => {
+      return contact.name.toLowerCase().includes(normalizedValue);
+    });
+  }
+
 
   return (
     <ContactStyled>
@@ -70,9 +70,8 @@ const onAddContact = ({ name, number }) => {
         <h2>Contacts</h2>
         <Filter filter={filter} onfilterChange={onfilterChange} />
         <Contacts
-          contacts={contactsEl}
+          contacts={getFilteredContacts()}
           onDelete={onDelete}
-          filteredName={filter}
         />
       </div>
     </ContactStyled>
