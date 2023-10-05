@@ -1,13 +1,13 @@
 import { PhonebookStyled, Input } from './Phonebook.styled';
 import { nanoid } from 'nanoid';
-
+import { useDispatch,useSelector } from 'react-redux';
 import { Btn } from './Phonebook.styled'
 import {  useState } from 'react';
 const nameId = nanoid(9);
 const numberId = nanoid(9);
 
-export const  Phonebook = ({onAddContact,}) => {
-  
+export const Phonebook = ({ onAddContact, }) => {
+
 const [formData, setFormData] = useState({
   name: '',
   number: '',
