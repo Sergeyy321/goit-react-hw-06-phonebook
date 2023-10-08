@@ -29,7 +29,7 @@ export const App = () => {
       <div>
         <h2>Contacts</h2>
         <Filter />
-        <Contacts contacts={getFilteredContacts()}  />
+        <Contacts getContacts={getFilteredContacts()}  />
       </div>
     </ContactStyled>
   );

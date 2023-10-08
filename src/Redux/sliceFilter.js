@@ -11,4 +11,4 @@ export const sliceFilter = createSlice({
   },
 });
 
-export const { qwery } = sliceFilter.actions;
+export const { qwery, filter } = sliceFilter.actions;

@@ -1,19 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import { ContactStyle } from './Contacts.styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteContact } from 'Redux/sliceContact';
 
-export const Contacts = ({}) => {
-  const contacts = useSelector(state => state.contacts);
+export const Contacts = ({ getContacts }) => {
   const dispatch = useDispatch();
   return (
     <ContactStyle>
       <ul>
-        {contacts.map(el => {
+        {getContacts.map(el => {
           return (
             <li key={el.id}>
-              {el.name} {el.number}{' '}
+              {el.name} {el.number}
               <button
                 onClick={() => {
                   dispatch(deleteContact(el.id));
