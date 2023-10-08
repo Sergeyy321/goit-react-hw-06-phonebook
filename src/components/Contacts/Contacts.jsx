@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ContactStyle } from './Contacts.styled';
-import { useSelector, useDispatch } from 'react-redux';
+import {  useDispatch } from 'react-redux';
 import { deleteContact } from 'Redux/sliceContact';
 
 export const Contacts = ({ getContacts }) => {
