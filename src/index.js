@@ -2,15 +2,36 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { App } from 'components/App';
 import './index.css';
-import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
-import { persist_Store,store } from 'Redux/store';
+import { store} from 'Redux/store';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persist_Store}>
-        <App />
-      </PersistGate>
+      <App />
     </Provider>
   </React.StrictMode>
 );
+// const INITIAL_STATE = {
+//   name: '',
+//   number: '',
+// };
+
+// const [state, setState] = useState(INITIAL_STATE);
+
+// const onSubmit = event => {
+//   event.preventDefault();
+//   const { name, number } = state;
+//   const id = nanoid();
+//   onAddContact({ id, name, number });
+//   reset();
+// };
+// // const reset = () => {
+// //   setState(INITIAL_STATE);
+// // };
+
+// const onChange = event => {
+//   const { name, value } = event.target;
+//   setState(prevState => {
+//     return { ...prevState, [name]: value };
+//   });
+// };
