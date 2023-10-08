@@ -1,8 +1,6 @@
 import { Filter } from 'components/Filter/Filter';
-
 import { Contacts } from 'components/Contacts/Contacts';
 import { Phonebook } from 'components/Phonebook/Phonebook';
-
 import { ContactStyled } from './App/App.styled';
 import { useSelector } from 'react-redux';
 
