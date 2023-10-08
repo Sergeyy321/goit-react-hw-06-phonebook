@@ -11,7 +11,6 @@ export const App = () => {
   const contacts = useSelector(state => state.contacts);
   const filter = useSelector(state => state.filter);
 
-
   const getFilteredContacts = () => {
     if (Array.isArray(contacts)) {
       const normalizedValue = filter.toLowerCase().trim();
