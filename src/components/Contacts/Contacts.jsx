@@ -2,13 +2,28 @@ import React from 'react';
 import { ContactStyle } from './Contacts.styled';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/sliceContacts';
+import { useSelector } from 'react-redux';
+export const Contacts = () => {
 
-export const Contacts = ({ getContacts }) => {
+ 
+  const contacts = useSelector(state => state.contacts);
+  const filter = useSelector(state => state.filter);
+    const getContacts = () => {
+      if (Array.isArray(contacts)) {
+        const normalizedValue = filter.toLowerCase().trim();
+        return contacts.filter(contact =>
+          contact.name.toLowerCase().includes(normalizedValue)
+        );
+      } else {
+        return [];
+      }
+    };
+
   const dispatch = useDispatch();
   return (
     <ContactStyle>
       <ul>
-        {getContacts.map(el => {
+        {getContacts().map(el => {
           return (
             <li key={el.id}>
               {el.name} {el.number}
